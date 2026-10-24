@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Élégance Atelier | Arriendo de Vestidos de Novia, Gala y Fiesta</title>
+  <meta name="description" content="Arriendo exclusivo de vestidos de novia, madrinas, galas y fiestas. Diseños de alta costura, entalle personalizado y tintorería 100% incluida. Agenda tu prueba en showroom." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Élégance Atelier — Arriendo de Vestidos de Novia & Gala" />
+  <meta property="og:description" content="Viste alta costura en tu gran noche sin gastar de más. Arriendo con entalle y tintorería incluida." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1594552072238-b8a33785b261?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Tailwind CSS CDN with config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            atelier: {
+              gold: '#c5a880',
+              goldDark: '#9d7b51',
+              goldLight: '#f7f1e7',
+              cream: '#faf8f5',
+              sand: '#f2ece4',
+              charcoal: '#18181b',
+              noir: '#0f0f11'
+            }
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="bg-[#FAF8F5] text-zinc-800 antialiased selection:bg-amber-100 selection:text-amber-900">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-zinc-950 text-white text-xs py-2.5 px-4 text-center border-b border-zinc-800 tracking-wide flex items-center justify-center gap-2 sm:gap-6 flex-wrap">
+    <span class="flex items-center gap-1.5 font-medium">
+      <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-300"></i>
+      <span>Colección 2026: Arriendo de Novias, Madrinas & Galas</span>
+    </span>
+    <span class="hidden md:inline-block text-zinc-600">|</span>
+    <span class="hidden md:flex items-center gap-1 text-zinc-300">
+      <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Tintorería 100% incluida en cada arriendo
+    </span>
+    <span class="hidden md:inline-block text-zinc-600">|</span>
+    <a href="#agendar-cita" class="text-amber-300 hover:text-amber-200 underline font-semibold flex items-center gap-1">
+      <span>Agenda tu prueba con copa de cortesía</span> &rarr;
+    </a>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="sticky top-0 z-40 glass-nav border-b border-stone-200/80 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2 group">
+          <div class="w-10 h-10 rounded-full bg-zinc-900 text-amber-200 flex items-center justify-center font-serif text-2xl font-bold tracking-tight shadow-md group-hover:scale-105 transition-transform">
+            É
+          </div>
+          <div class="flex flex-col">
+            <span class="font-serif text-2xl font-bold tracking-wider text-zinc-900 uppercase">Élégance</span>
+            <span class="text-[9px] tracking-[0.25em] text-amber-800 font-semibold uppercase -mt-1">Atelier & Boutique</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-zinc-700">
+          <a href="#catalogo" class="hover:text-amber-800 transition-colors">Catálogo</a>
+          <a href="#como-funciona" class="hover:text-amber-800 transition-colors">Cómo Funciona</a>
+          <a href="#beneficios" class="hover:text-amber-800 transition-colors">Ventajas</a>
+          <a href="#testimonios" class="hover:text-amber-800 transition-colors">Opiniones</a>
+          <a href="#faq" class="hover:text-amber-800 transition-colors">Preguntas Frecuentes</a>
+          <a href="#contacto" class="hover:text-amber-800 transition-colors">Showroom</a>
+        </nav>
+
+        <!-- Right Side CTA & Wishlist -->
+        <div class="flex items-center gap-3">
+          
+          <!-- Wishlist Button -->
+          <button 
+            id="wishlistToggleBtn" 
+            type="button" 
+            class="relative p-2.5 rounded-full hover:bg-stone-200/70 text-zinc-800 transition-colors"
+            title="Mis Vestidos Favoritos"
+          >
+            <i data-lucide="heart" class="w-5 h-5 text-zinc-800"></i>
+            <span class="wishlist-counter absolute -top-1 -right-1 w-5 h-5 bg-amber-700 text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-sm opacity-0 transition-opacity">
+              0
+            </span>
+          </button>
+
+          <!-- Appointment Button -->
+          <a 
+            href="#agendar-cita" 
+            class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-zinc-900 hover:bg-amber-900 text-white text-xs font-semibold tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+          >
+            <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+            <span>Agendar Cita</span>
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobileMenuBtn" type="button" class="lg:hidden p-2 text-zinc-800 focus:outline-none">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Dropdown -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-stone-200 px-4 pt-3 pb-6 space-y-3">
+      <a href="#catalogo" class="block py-2 text-base font-medium text-zinc-800 border-b border-stone-100">Catálogo & Vestidos</a>
+      <a href="#como-funciona" class="block py-2 text-base font-medium text-zinc-800 border-b border-stone-100">Cómo Funciona</a>
+      <a href="#beneficios" class="block py-2 text-base font-medium text-zinc-800 border-b border-stone-100">Ventajas del Arriendo</a>
+      <a href="#testimonios" class="block py-2 text-base font-medium text-zinc-800 border-b border-stone-100">Opiniones de Clientas</a>
+      <a href="#faq" class="block py-2 text-base font-medium text-zinc-800 border-b border-stone-100">Preguntas Frecuentes</a>
+      <a href="#contacto" class="block py-2 text-base font-medium text-zinc-800 border-b border-stone-100">Showroom & Ubicación</a>
+      <div class="pt-2">
+        <a href="#agendar-cita" class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-zinc-900 text-white text-sm font-semibold">
+          <i data-lucide="calendar" class="w-4 h-4"></i> Agendar Cita en Showroom
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden pt-8 pb-16 lg:pt-16 lg:pb-24 bg-gradient-to-b from-[#FAF8F5] via-[#F5EFE6] to-[#FAF8F5]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Hero Content -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-stone-300 text-zinc-800 text-xs font-semibold tracking-wide shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-amber-600 animate-ping"></span>
+            <span>Showroom Exclusivo en Santiago &bull; Envíos a todo Chile</span>
+          </div>
+
+          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tight leading-[1.1]">
+            Tu vestido soñado, hecho realidad para tu <span class="text-gold-gradient italic font-serif">gran noche.</span>
+          </h1>
+
+          <p class="text-stone-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+            Arriendo exclusivo de vestidos de novia, madrinas, galas y graduaciones. 
+            Disfruta de piezas de alta costura con <strong class="text-zinc-900 font-semibold">entalle a tu medida</strong> y <strong class="text-zinc-900 font-semibold">tintorería 100% incluida</strong>, ahorrando hasta un 85% sobre el precio de compra.
+          </p>
+
+          <!-- Badges & Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <a 
+              href="#catalogo" 
+              class="w-full sm:w-auto px-8 py-4 rounded-full bg-zinc-900 hover:bg-amber-900 text-white font-semibold text-sm tracking-wider uppercase transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center gap-2"
+            >
+              <span>Explorar Catálogo</span>
+              <i data-lucide="arrow-down" class="w-4 h-4"></i>
+            </a>
+
+            <a 
+              href="#agendar-cita" 
+              class="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-stone-100 text-zinc-900 font-semibold text-sm tracking-wider uppercase transition-all duration-300 border border-stone-300 shadow-sm flex items-center justify-center gap-2"
+            >
+              <i data-lucide="calendar-heart" class="w-4 h-4 text-amber-700"></i>
+              <span>Agendar Prueba Gratis</span>
+            </a>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-stone-300/80">
+            <div class="flex flex-col">
+              <span class="font-serif text-2xl font-bold text-zinc-900">+250</span>
+              <span class="text-xs text-stone-500 font-medium">Diseños en stock</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-serif text-2xl font-bold text-zinc-900">4 Días</span>
+              <span class="text-xs text-stone-500 font-medium">Arriendo completo</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-serif text-2xl font-bold text-zinc-900">100%</span>
+              <span class="text-xs text-stone-500 font-medium">Lavado incluido</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-serif text-2xl font-bold text-zinc-900">4.9 / 5</span>
+              <span class="text-xs text-stone-500 font-medium">+850 novias & clientas</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Visual Collage -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            
+            <!-- Main Featured Image -->
+            <div class="aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl border-4 border-white relative bg-stone-200">
+              <img 
+                src="https://images.unsplash.com/photo-1594552072238-b8a33785b261?auto=format&fit=crop&w=1000&q=85" 
+                alt="Vestido de Novia de Alta Costura" 
+                class="w-full h-full object-cover object-top"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div class="absolute bottom-6 left-6 right-6 text-white">
+                <span class="badge-luxury mb-2 inline-block">Colección Novias 2026</span>
+                <h3 class="font-serif text-2xl font-bold text-white">Vestido Sirena Aura Celestial</h3>
+                <p class="text-xs text-stone-200 mt-1">Encaje Chantilly francés con cola catedral</p>
+                <div class="mt-2 flex items-baseline gap-2">
+                  <span class="text-xl font-bold text-amber-300">$390.000 / arriendo</span>
+                  <span class="text-xs text-stone-300 line-through">Compra $1.850.000</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Card Top Right -->
+            <div class="hidden sm:flex absolute -top-6 -right-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-stone-200 shadow-xl items-center gap-3 max-w-[210px]">
+              <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="sparkles" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-[11px] font-bold text-zinc-900 leading-tight">Entalle a Medida</p>
+                <p class="text-[10px] text-stone-500">Modista especializada en showroom</p>
+              </div>
+            </div>
+
+            <!-- Floating Card Bottom Left -->
+            <div class="hidden sm:flex absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-stone-200 shadow-xl items-center gap-3 max-w-[230px]">
+              <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="shield-check" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-[11px] font-bold text-zinc-900 leading-tight">Cero Preocupaciones</p>
+                <p class="text-[10px] text-stone-500">Tintorería post-evento corre por nuestra cuenta</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section (El Proceso en 4 Pasos) -->
+  <section id="como-funciona" class="py-20 bg-white border-y border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs uppercase font-bold tracking-widest text-amber-800 bg-amber-50 px-3.5 py-1 rounded-full border border-amber-200">
+          Experiencia Sin Complicaciones
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-zinc-950">
+          ¿Cómo funciona el arriendo en Élégance?
+        </h2>
+        <p class="text-stone-600 text-sm sm:text-base">
+          Diseñamos un proceso transparente, cómodo y libre de estrés para que solo pienses en disfrutar tu celebración.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-14">
+        
+        <!-- Step 1 -->
+        <div class="p-6 rounded-2xl bg-stone-50 border border-stone-200/80 relative group hover:border-amber-300 transition-all flex flex-col">
+          <div class="w-12 h-12 rounded-xl bg-zinc-900 text-amber-200 font-serif text-xl font-bold flex items-center justify-center mb-5 shadow-sm">
+            01
+          </div>
+          <h3 class="font-serif text-xl font-bold text-zinc-900 mb-2">Elige y Agenda</h3>
+          <p class="text-xs text-stone-600 leading-relaxed">
+            Revisa nuestro catálogo online, guarda tus modelos favoritos y agenda tu cita personalizada de prueba en nuestro showroom privado.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="p-6 rounded-2xl bg-stone-50 border border-stone-200/80 relative group hover:border-amber-300 transition-all flex flex-col">
+          <div class="w-12 h-12 rounded-xl bg-zinc-900 text-amber-200 font-serif text-xl font-bold flex items-center justify-center mb-5 shadow-sm">
+            02
+          </div>
+          <h3 class="font-serif text-xl font-bold text-zinc-900 mb-2">Prueba y Entalle</h3>
+          <p class="text-xs text-stone-600 leading-relaxed">
+            Visítanos con tus acompañantes. Te asesoramos con una copa de bienvenida y tomamos tus medidas para ajustes de basta y entalle fino.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="p-6 rounded-2xl bg-stone-50 border border-stone-200/80 relative group hover:border-amber-300 transition-all flex flex-col">
+          <div class="w-12 h-12 rounded-xl bg-zinc-900 text-amber-200 font-serif text-xl font-bold flex items-center justify-center mb-5 shadow-sm">
+            03
+          </div>
+          <h3 class="font-serif text-xl font-bold text-zinc-900 mb-2">Retira y Brilla</h3>
+          <p class="text-xs text-stone-600 leading-relaxed">
+            Retira tu vestido impecable, vaporizado y en su portatraje 1 o 2 días antes de tu evento (o solicita envío a tu domicilio/hotel).
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="p-6 rounded-2xl bg-stone-50 border border-stone-200/80 relative group hover:border-amber-300 transition-all flex flex-col">
+          <div class="w-12 h-12 rounded-xl bg-zinc-900 text-amber-200 font-serif text-xl font-bold flex items-center justify-center mb-5 shadow-sm">
+            04
+          </div>
+          <h3 class="font-serif text-xl font-bold text-zinc-900 mb-2">Devolución Cómoda</h3>
+          <p class="text-xs text-stone-600 leading-relaxed">
+            Devuelve el vestido el lunes siguiente. ¡No tienes que lavarlo! Nuestra tintorería especializada se encarga de todo y devolvemos tu garantía.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Catalog Section -->
+  <section id="catalogo" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Title -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+      <div>
+        <span class="text-xs uppercase font-bold tracking-widest text-amber-800 bg-amber-50 px-3.5 py-1 rounded-full border border-amber-200">
+          Catálogo & Colección 2026
+        </span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-zinc-950 mt-2">
+          Encuentra tu Vestido Ideal
+        </h2>
+        <p class="text-stone-600 text-sm mt-1 max-w-xl">
+          Filtra por categoría, talla o rango de precio. Cada vestido incluye servicio de entalle básico y tintorería profesional.
+        </p>
+      </div>
+
+      <div class="text-xs text-stone-500 font-semibold bg-white px-4 py-2 rounded-xl border border-stone-200 self-start md:self-auto shadow-sm">
+        <span id="resultsCount">Cargando colección...</span>
+      </div>
+    </div>
+
+    <!-- Category Filter Tabs -->
+    <div class="flex items-center gap-2 overflow-x-auto pb-3 mb-6 scrollbar-none">
+      <button 
+        type="button" 
+        data-category-btn="all"
+        class="filter-btn-active px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide border transition-all whitespace-nowrap bg-zinc-900 text-white border-zinc-900"
+      >
+        Todos los Diseños
+      </button>
+      <button 
+        type="button" 
+        data-category-btn="novias"
+        class="px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide border transition-all whitespace-nowrap bg-white text-zinc-700 border-stone-300 hover:bg-stone-100"
+      >
+        👰 Novias & Civil
+      </button>
+      <button 
+        type="button" 
+        data-category-btn="gala"
+        class="px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide border transition-all whitespace-nowrap bg-white text-zinc-700 border-stone-300 hover:bg-stone-100"
+      >
+        ✨ Gala & Madrinas
+      </button>
+      <button 
+        type="button" 
+        data-category-btn="fiesta"
+        class="px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide border transition-all whitespace-nowrap bg-white text-zinc-700 border-stone-300 hover:bg-stone-100"
+      >
+        💃 Fiesta & Graduaciones
+      </button>
+      <button 
+        type="button" 
+        data-category-btn="accesorios"
+        class="px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide border transition-all whitespace-nowrap bg-white text-zinc-700 border-stone-300 hover:bg-stone-100"
+      >
+        👑 Velos, Tocados & Clutches
+      </button>
+    </div>
+
+    <!-- Secondary Filters Bar (Search, Size, Price, Sort) -->
+    <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm mb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 items-center">
+      
+      <!-- Search Input -->
+      <div class="lg:col-span-4 relative">
+        <i data-lucide="search" class="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+        <input 
+          id="searchInput" 
+          type="text" 
+          placeholder="Buscar por nombre, color, tela o corte..." 
+          class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-stone-200 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-700/30 focus:border-amber-700 bg-stone-50/50"
+        />
+      </div>
+
+      <!-- Size Filter -->
+      <div class="lg:col-span-2">
+        <select 
+          id="sizeFilter" 
+          class="w-full px-3 py-2.5 rounded-xl border border-stone-200 text-xs sm:text-sm text-zinc-700 focus:outline-none focus:ring-2 focus:ring-amber-700/30 focus:border-amber-700 bg-white"
+        >
+          <option value="all">Todas las Tallas</option>
+          <option value="XS">Talla XS (34)</option>
+          <option value="S">Talla S (36)</option>
+          <option value="M">Talla M (38)</option>
+          <option value="L">Talla L (40)</option>
+          <option value="XL">Talla XL (42+)</option>
+        </select>
+      </div>
+
+      <!-- Price Filter -->
+      <div class="lg:col-span-3">
+        <select 
+          id="priceFilter" 
+          class="w-full px-3 py-2.5 rounded-xl border border-stone-200 text-xs sm:text-sm text-zinc-700 focus:outline-none focus:ring-2 focus:ring-amber-700/30 focus:border-amber-700 bg-white"
+        >
+          <option value="all">Cualquier Precio</option>
+          <option value="low">Hasta $50.000 (Fiesta / Accesorios)</option>
+          <option value="mid">$50.000 a $120.000 (Gala & Madrinas)</option>
+          <option value="high">Más de $120.000 (Colección Novias)</option>
+        </select>
+      </div>
+
+      <!-- Sort Order -->
+      <div class="lg:col-span-2">
+        <select 
+          id="sortBy" 
+          class="w-full px-3 py-2.5 rounded-xl border border-stone-200 text-xs sm:text-sm text-zinc-700 focus:outline-none focus:ring-2 focus:ring-amber-700/30 focus:border-amber-700 bg-white"
+        >
+          <option value="featured">Destacados</option>
+          <option value="price-asc">Precio: Menor a Mayor</option>
+          <option value="price-desc">Precio: Mayor a Menor</option>
+          <option value="rating">Mejor Calificados</option>
+        </select>
+      </div>
+
+      <!-- Reset Filter Button -->
+      <div class="lg:col-span-1">
+        <button 
+          id="resetFiltersBtn" 
+          type="button" 
+          class="w-full py-2.5 px-3 rounded-xl border border-stone-200 hover:bg-stone-100 text-zinc-700 text-xs font-semibold flex items-center justify-center gap-1 transition-colors"
+          title="Restablecer filtros"
+        >
+          <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+          <span class="sm:hidden lg:inline">Limpiar</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Dresses Grid Container -->
+    <div id="dressesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7">
+      <!-- Dynamic cards rendered by js/app.js -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="emptyState" class="hidden text-center py-20 bg-white rounded-3xl border border-stone-200 max-w-xl mx-auto px-6">
+      <div class="w-16 h-16 rounded-full bg-stone-100 text-stone-400 flex items-center justify-center mx-auto mb-4">
+        <i data-lucide="search-x" class="w-8 h-8"></i>
+      </div>
+      <h3 class="font-serif text-2xl font-bold text-zinc-900">No encontramos resultados con esos filtros</h3>
+      <p class="text-stone-500 text-xs sm:text-sm mt-2">
+        Intenta cambiando los criterios de talla, precio o restablece los filtros para ver la colección completa.
+      </p>
+      <button 
+        type="button" 
+        onclick="resetFilters()"
+        class="mt-6 px-6 py-2.5 rounded-full bg-zinc-900 hover:bg-amber-900 text-white text-xs font-semibold uppercase tracking-wider transition-all"
+      >
+        Ver Todos los Diseños
+      </button>
+    </div>
+
+  </section>
+
+  <!-- Value Propositions / Por Qué Elegirnos -->
+  <section id="beneficios" class="py-20 bg-stone-100/70 border-t border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs uppercase font-bold tracking-widest text-amber-800 bg-amber-50 px-3.5 py-1 rounded-full border border-amber-200">
+          Por Qué Arrendar
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-zinc-950 mt-2">
+          La forma inteligente y sustentable de vestir alta costura
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="bg-white p-8 rounded-2xl border border-stone-200 shadow-sm space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center">
+            <i data-lucide="piggy-bank" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-zinc-900">Ahorra hasta un 85%</h3>
+          <p class="text-stone-600 text-sm leading-relaxed">
+            Un vestido de novia o gala suele usarse sólo una vez en la vida y queda guardado en el clóset. Con el arriendo accedes a las mejores telas y diseñadores por una fracción de su valor comercial.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl border border-stone-200 shadow-sm space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center">
+            <i data-lucide="scissors" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-zinc-900">Entalle a tu Medida</h3>
+          <p class="text-stone-600 text-sm leading-relaxed">
+            No tienes que preocuparte por si te quedará largo o suelto. Nuestro taller de modistería calificado ajusta bastas, tirantes y pinzas para que calce a tu cuerpo como un guante.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl border border-stone-200 shadow-sm space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-800 flex items-center justify-center">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-zinc-900">Tintorería Premium Incluida</h3>
+          <p class="text-stone-600 text-sm leading-relaxed">
+            Disfruta la pista de baile sin miedo. Devuelve la prenda tal cual al terminar tu fin de semana; nosotros nos encargamos del lavado en seco especializado y planchado al vapor.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Appointment Booking Section (Agendar Cita) -->
+  <section id="agendar-cita" class="py-20 bg-zinc-950 text-white relative overflow-hidden">
+    <!-- Ambient gold glow -->
+    <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-amber-500/10 blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-amber-500/10 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Booking Pitch -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-xs uppercase font-bold tracking-widest text-amber-300 bg-amber-950/60 px-3.5 py-1 rounded-full border border-amber-800/60">
+            Showroom Privado
+          </span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight">
+            Agenda tu Prueba de Vestuario Personalizada
+          </h2>
+          <p class="text-zinc-400 text-sm sm:text-base leading-relaxed">
+            Queremos que vivir la elección de tu vestido sea un momento mágico. Te recibimos en nuestro exclusivo showroom con asesoría 1 a 1 y copa de cortesía.
+          </p>
+
+          <div class="space-y-4 pt-4 border-t border-zinc-800 text-sm text-zinc-300">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-300 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="clock" class="w-4 h-4"></i>
+              </div>
+              <span>Sesiones exclusivas de 50 minutos con atención dedicada</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-300 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="users" class="w-4 h-4"></i>
+              </div>
+              <span>Ven acompañada con hasta 2 personas de tu confianza</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-300 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="wine" class="w-4 h-4"></i>
+              </div>
+              <span>Copa de espumante o café de cortesía para ti y tus invitadas</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-300 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="map-pin" class="w-4 h-4"></i>
+              </div>
+              <span>Showroom en Vitacura / Las Condes con estacionamiento privado</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Booking Form -->
+        <div class="lg:col-span-7 bg-white text-zinc-900 p-6 sm:p-9 rounded-3xl shadow-2xl border border-stone-200">
+          <div class="mb-6">
+            <h3 class="font-serif text-2xl font-bold text-zinc-950">Reserva tu Hora de Prueba</h3>
+            <p class="text-xs text-stone-500 mt-1">Completa el formulario y recibirás confirmación inmediata vía WhatsApp.</p>
+          </div>
+
+          <form id="appointmentForm" class="space-y-4">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-stone-700 mb-1" for="clientName">Nombre Completo *</label>
+                <input 
+                  type="text" 
+                  id="clientName" 
+                  required 
+                  placeholder="Ej: Sofia Martínez" 
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-700/30 focus:border-amber-700"
+                />
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-stone-700 mb-1" for="clientPhone">Teléfono / WhatsApp *</label>
+                <input 
+                  type="tel" 
+                  id="clientPhone" 
+                  required 
+                  placeholder="+56 9 1234 5678" 
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-700/30 focus:border-amber-700"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-stone-700 mb-1" for="clientEmail">Correo Electrónico (opcional)</label>
+                <input 
+                  type="email" 
+                  id="clientEmail" 
+                  placeholder="sofia@ejemplo.cl" 
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-700/30 focus:border-amber-700"
+                />
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-stone-700 mb-1" for="eventType">Tipo de Evento *</label>
+                <select 
+                  id="eventType" 
+                  required 
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-700/30 focus:border-amber-700 bg-white"
+                >
+                  <option value="Matrimonio - Novia">Matrimonio (Soy la Novia)</option>
+                  <option value="Matrimonio Civil">Matrimonio Civil</option>
+                  <option value="Madrina de Boda">Madrina de Matrimonio</option>
+                  <option value="Gala / Graduación">Gala o Graduación</option>
+                  <option value="Invitada de Fiesta">Invitada de Boda / Coctel</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-stone-700 mb-1" for="appointmentDate">Fecha de Prueba *</label>
+                <input 
+                  type="date" 
+                  id="appointmentDate" 
+                  required 
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-700/30 focus:border-amber-700 bg-white"
+                />
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-stone-700 mb-1" for="appointmentTime">Horario Preferido *</label>
+                <select 
+                  id="appointmentTime" 
+                  required 
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-700/30 focus:border-amber-700 bg-white"
+                >
+                  <option value="10:30">10:30 hrs</option>
+                  <option value="11:45">11:45 hrs</option>
+                  <option value="14:00">14:00 hrs</option>
+                  <option value="15:30">15:30 hrs</option>
+                  <option value="17:00">17:00 hrs</option>
+                  <option value="18:15">18:15 hrs</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-stone-700 mb-1" for="appointmentGuests">Acompañantes</label>
+                <select 
+                  id="appointmentGuests" 
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-700/30 focus:border-amber-700 bg-white"
+                >
+                  <option value="0">Iré sola</option>
+                  <option value="1">1 acompañante</option>
+                  <option value="2" selected>2 acompañantes</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-stone-700 mb-1" for="appointmentDress">Diseño o Vestido de Interés</label>
+              <select 
+                id="appointmentDress" 
+                class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-700/30 focus:border-amber-700 bg-white"
+              >
+                <!-- Populated dynamically -->
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-stone-700 mb-1" for="appointmentNotes">Comentarios o Medidas aproximadas</label>
+              <textarea 
+                id="appointmentNotes" 
+                rows="2" 
+                placeholder="¿Tienes alguna preferencia de color, estilo o fecha exacta de tu fiesta?" 
+                class="w-full px-3.5 py-2 rounded-xl border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-700/30 focus:border-amber-700"
+              ></textarea>
+            </div>
+
+            <button 
+              type="submit" 
+              class="w-full py-4 rounded-xl bg-zinc-900 hover:bg-amber-900 text-white font-semibold text-sm tracking-wider uppercase transition-all duration-300 shadow-lg flex items-center justify-center gap-2 mt-4"
+            >
+              <i data-lucide="check" class="w-4 h-4 text-amber-300"></i>
+              <span>Confirmar y Reservar Cita</span>
+            </button>
+
+            <p class="text-[11px] text-center text-stone-400 mt-2">
+              🔒 Tus datos están protegidos. Sin cobros por agendar tu prueba.
+            </p>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonios" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <span class="text-xs uppercase font-bold tracking-widest text-amber-800 bg-amber-50 px-3.5 py-1 rounded-full border border-amber-200">
+        Historias Reales
+      </span>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-zinc-950 mt-2">
+        Clientas que brillaron en su noche especial
+      </h2>
+      <p class="text-stone-600 text-sm mt-1">
+        Más de 850 mujeres han confiado en nuestro taller para sus eventos más memorables.
+      </p>
+    </div>
+
+    <div id="testimonialsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Populated by js/app.js -->
+    </div>
+  </section>
+
+  <!-- FAQ Section (Preguntas Frecuentes) -->
+  <section id="faq" class="py-20 bg-stone-100/70 border-t border-stone-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <span class="text-xs uppercase font-bold tracking-widest text-amber-800 bg-amber-50 px-3.5 py-1 rounded-full border border-amber-200">
+          Transparencia Total
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-zinc-950 mt-2">
+          Preguntas Frecuentes
+        </h2>
+        <p class="text-stone-600 text-sm mt-1">
+          Todo lo que necesitas saber sobre garantías, plazos de arriendo, pruebas y devoluciones.
+        </p>
+      </div>
+
+      <div id="faqContainer" class="space-y-3">
+        <!-- Rendered by js/app.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Showroom & Contact Section -->
+  <section id="contacto" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-lg grid grid-cols-1 lg:grid-cols-12">
+      
+      <div class="lg:col-span-5 p-8 sm:p-12 flex flex-col justify-between bg-stone-900 text-white">
+        <div>
+          <span class="text-xs uppercase font-bold tracking-widest text-amber-300">Visítanos</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-2">
+            Nuestro Showroom en Santiago
+          </h2>
+          <p class="text-stone-300 text-sm mt-3 leading-relaxed">
+            Ven a vivir una experiencia íntima de prueba y asesoría de imagen para encontrar el vestido perfecto.
+          </p>
+
+          <div class="space-y-5 mt-8 text-sm">
+            <div class="flex items-start gap-3">
+              <i data-lucide="map-pin" class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="block text-white">Dirección:</strong>
+                <span class="text-stone-300">Av. Vitacura 3565, Oficina 402, Vitacura, Región Metropolitana</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <i data-lucide="clock" class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="block text-white">Horarios de Atención:</strong>
+                <span class="text-stone-300">Lunes a Viernes: 10:00 - 19:30 hrs<br>Sábados: 10:00 - 18:00 hrs (con cita previa)</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <i data-lucide="phone" class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="block text-white">Teléfono & WhatsApp:</strong>
+                <span class="text-stone-300">+56 9 8765 4321</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <i data-lucide="mail" class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="block text-white">Email:</strong>
+                <span class="text-stone-300">contacto@eleganceatelier.cl</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-8 border-t border-stone-800 mt-8 flex items-center gap-4">
+          <span class="text-xs text-stone-400">Síguenos:</span>
+          <a href="#" class="w-9 h-9 rounded-full bg-stone-800 hover:bg-amber-600 flex items-center justify-center text-white transition-colors">
+            <i data-lucide="instagram" class="w-4 h-4"></i>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-full bg-stone-800 hover:bg-amber-600 flex items-center justify-center text-white transition-colors">
+            <i data-lucide="facebook" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Stylized Showroom Visual / Map -->
+      <div class="lg:col-span-7 relative min-h-[350px] bg-stone-200">
+        <img 
+          src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=1200&q=80" 
+          alt="Showroom de vestidos de novia y fiesta" 
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end p-8 text-white">
+          <div class="max-w-md">
+            <span class="badge-luxury mb-2">Showroom Privado</span>
+            <h4 class="font-serif text-2xl font-bold">Un espacio creado para soñar</h4>
+            <p class="text-xs text-stone-200 mt-1">Pruebas individuales con espejos de cuerpo entero y modista en sala.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-zinc-950 text-white pt-16 pb-12 border-t border-zinc-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-zinc-800/80">
+        
+        <!-- Col 1: Brand -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full bg-amber-400 text-zinc-950 flex items-center justify-center font-serif text-xl font-bold">
+              É
+            </div>
+            <span class="font-serif text-2xl font-bold tracking-wider uppercase text-white">Élégance Atelier</span>
+          </div>
+          <p class="text-xs text-zinc-400 leading-relaxed max-w-sm">
+            Especialistas en arriendo de alta costura nupcial, vestidos de fiesta, galas de graduación y accesorios exclusivos. Viste tus momentos más inolvidables con elegancia consciente.
+          </p>
+          <div class="text-xs text-zinc-400">
+            Santiago de Chile &bull; Envíos a todo el país
+          </div>
+        </div>
+
+        <!-- Col 2: Colecciones -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-amber-300">Colecciones</h4>
+          <ul class="text-xs space-y-2 text-zinc-400">
+            <li><a href="#catalogo" class="hover:text-white transition-colors">Vestidos de Novia</a></li>
+            <li><a href="#catalogo" class="hover:text-white transition-colors">Matrimonio Civil</a></li>
+            <li><a href="#catalogo" class="hover:text-white transition-colors">Gala & Madrinas</a></li>
+            <li><a href="#catalogo" class="hover:text-white transition-colors">Fiesta & Graduaciones</a></li>
+            <li><a href="#catalogo" class="hover:text-white transition-colors">Velos & Tocados</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Servicio -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-amber-300">Servicios</h4>
+          <ul class="text-xs space-y-2 text-zinc-400">
+            <li><a href="#como-funciona" class="hover:text-white transition-colors">Cómo Funciona el Arriendo</a></li>
+            <li><a href="#agendar-cita" class="hover:text-white transition-colors">Agendar Cita en Showroom</a></li>
+            <li><a href="#beneficios" class="hover:text-white transition-colors">Entalles de Modistería</a></li>
+            <li><a href="#faq" class="hover:text-white transition-colors">Tintorería Especializada</a></li>
+            <li><a href="#faq" class="hover:text-white transition-colors">Políticas de Garantía</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Atención -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-amber-300">Atención Directa</h4>
+          <p class="text-xs text-zinc-400">¿Tienes dudas con tu talla o fecha?</p>
+          <a 
+            href="https://wa.me/56987654321?text=Hola,%20quisiera%20consultar%20por%20arriendo%20de%20vestidos" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold tracking-wide transition-all shadow-md"
+          >
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Chatear en WhatsApp</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
+        <div>
+          &copy; 2026 Élégance Atelier. Todos los derechos reservados.
+        </div>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-zinc-300 transition-colors">Términos del Arriendo</a>
+          <a href="#" class="hover:text-zinc-300 transition-colors">Políticas de Garantía</a>
+          <a href="#" class="hover:text-zinc-300 transition-colors">Privacidad</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Detail & Quick View Modal -->
+  <div id="dressModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <!-- Backdrop -->
+    <div id="modalBackdrop" class="fixed inset-0 bg-black/75 backdrop-blur-sm transition-opacity"></div>
+    
+    <!-- Modal Dialog -->
+    <div class="relative bg-white rounded-3xl max-w-4xl w-full p-6 sm:p-8 z-10 shadow-2xl border border-stone-200 max-h-[92vh] overflow-y-auto">
+      <button 
+        id="closeModalBtn" 
+        type="button" 
+        class="absolute top-4 right-4 w-9 h-9 rounded-full bg-stone-100 hover:bg-stone-200 text-zinc-700 flex items-center justify-center transition-colors z-20"
+        title="Cerrar ventana"
+      >
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div id="modalBody">
+        <!-- Injected via js/app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Wishlist Slide-Over Drawer -->
+  <div id="wishlistBackdrop" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 transition-opacity"></div>
+  <div 
+    id="wishlistDrawer" 
+    class="fixed top-0 right-0 h-full w-full max-w-md bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-out flex flex-col"
+  >
+    <!-- Drawer Header -->
+    <div class="p-5 border-b border-stone-200 flex items-center justify-between bg-stone-50">
+      <div class="flex items-center gap-2">
+        <i data-lucide="heart" class="w-5 h-5 text-amber-800 fill-amber-800"></i>
+        <h3 class="font-serif text-xl font-bold text-zinc-900">Mis Favoritos Guardados</h3>
+      </div>
+      <button id="closeWishlistBtn" type="button" class="p-2 text-stone-500 hover:text-zinc-900">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <!-- Drawer Items List -->
+    <div id="wishlistItemsContainer" class="p-5 flex-grow overflow-y-auto space-y-3">
+      <!-- Items dynamically added here -->
+    </div>
+
+    <!-- Empty Wishlist State -->
+    <div id="wishlistEmptyState" class="hidden p-8 text-center flex-grow flex flex-col items-center justify-center">
+      <div class="w-16 h-16 rounded-full bg-stone-100 text-stone-300 flex items-center justify-center mb-3">
+        <i data-lucide="heart" class="w-8 h-8"></i>
+      </div>
+      <h4 class="font-serif text-xl font-bold text-zinc-900">Tu lista está vacía</h4>
+      <p class="text-xs text-stone-500 mt-1 max-w-xs">
+        Haz clic en el corazón de cualquier vestido para guardarlo aquí y cotizar tu lista completa.
+      </p>
+    </div>
+
+    <!-- Drawer Footer -->
+    <div id="wishlistFooter" class="p-5 border-t border-stone-200 bg-stone-50 space-y-3">
+      <div class="flex justify-between items-baseline">
+        <span class="text-xs font-semibold text-stone-600 uppercase">Total Arriendo Estimado:</span>
+        <span id="wishlistTotalPrice" class="font-serif text-2xl font-bold text-zinc-900">$0</span>
+      </div>
+      <p class="text-[11px] text-stone-500">
+        * Incluye tintorería de cada prenda y asesoría de modistería.
+      </p>
+      <a 
+        id="wishlistWhatsAppBtn" 
+        href="#" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="w-full py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs tracking-wider uppercase flex items-center justify-center gap-2 transition-colors shadow-md"
+      >
+        <i data-lucide="message-circle" class="w-4 h-4"></i>
+        <span>Consultar Disponibilidad de mi Lista</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Booking Success Modal -->
+  <div id="bookingSuccessModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
+    <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-stone-200">
+      <div id="bookingSuccessContent">
+        <!-- Rendered by js/app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Action Button -->
+  <aside aria-label="Contacto rápido por WhatsApp" class="fixed bottom-6 right-6 z-40 flex items-center group">
+    <a 
+      href="https://wa.me/56987654321?text=Hola%20%C3%89l%C3%A9gance%20Atelier!%20Me%20gustar%C3%ADa%20consultar%20por%20arriendo%20de%20vestidos" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="animate-whatsapp w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center shadow-2xl transition-transform hover:scale-110 active:scale-95"
+      title="Escríbenos por WhatsApp"
+    >
+      <i data-lucide="message-circle" class="w-7 h-7"></i>
+    </a>
+  </aside>
+
+  <!-- Load Data and Application Scripts -->
+  <script src="data/vestidos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
